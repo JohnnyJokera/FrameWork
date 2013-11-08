@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[[LOG] Starting test ConditionerTest<br>]]>
+    </line>
+    <line>
+      <![CDATA[[LOG] Opening main page <br>]]>
+    </line>
+  </reporter-output>
+  <suite name="Suite 1" duration-ms="147689" started-at="2013-11-08T08:59:21Z" finished-at="2013-11-08T09:01:49Z">
+    <groups>
+    </groups>
+    <test name="testNG test1" duration-ms="147689" started-at="2013-11-08T08:59:21Z" finished-at="2013-11-08T09:01:49Z">
+      <class name="com.epam.tests.ConditionerTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.epam.tests.ConditionerTest@4d04a0e8]" name="setUp" is-config="true" duration-ms="3966" started-at="2013-11-08T10:59:21Z" finished-at="2013-11-08T10:59:25Z">
+          <reporter-output>
+            <line>
+              <![CDATA[[LOG] Starting test ConditionerTest<br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="initElements()[pri:0, instance:com.epam.tests.ConditionerTest@4d04a0e8]" name="initElements" is-config="true" duration-ms="20" started-at="2013-11-08T10:59:25Z" finished-at="2013-11-08T10:59:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initElements -->
+        <test-method status="PASS" signature="conditioner(java.lang.String)[pri:0, instance:com.epam.tests.ConditionerTest@4d04a0e8]" name="conditioner" duration-ms="143425" started-at="2013-11-08T10:59:25Z" data-provider="baseDataProvider" finished-at="2013-11-08T11:01:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Кондиционеры]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[[LOG] Opening main page <br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- conditioner -->
+      </class> <!-- com.epam.tests.ConditionerTest -->
+    </test> <!-- testNG test1 -->
+  </suite> <!-- Suite 1 -->
+</testng-results>
