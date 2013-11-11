@@ -116,19 +116,6 @@ public class WebDriverFactory {
 		throw new Error("Unrecognized browser type: " + browserType);
 	}
 
-	public static WebDriver getDriver() {
-		String browser = Configuration.getBrowser();
-		if (browser.equals("firefox"))
-			return getDriver(DesiredCapabilities.firefox());
-		if (browser.startsWith("internet explorer"))
-			return getDriver(DesiredCapabilities.internetExplorer());
-		if (browser.equals("chrome"))
-			return getDriver(DesiredCapabilities.chrome());
-		/*if (browser.equals("opera"))
-			return getDriver(DesiredCapabilities.opera());*/
-		throw new Error("Unrecognized browser type: " + browser);
-	}
-
 	static {
 		Runtime.getRuntime().addShutdownHook(new Thread() {
 			public void run() {

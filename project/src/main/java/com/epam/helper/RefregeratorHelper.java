@@ -90,6 +90,8 @@ Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 			if (listName.get(j).equalsIgnoreCase(s.next())) {
 				countTrue++;
 				System.out.println(listName.get(j));
+				System.out.println("----");
+				System.out.println(s.next());
 			}
 			j++;
 		}

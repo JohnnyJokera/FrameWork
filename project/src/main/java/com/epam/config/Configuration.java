@@ -31,13 +31,6 @@ public class Configuration {
 		Configuration.screenShotsFileExtension = screenShotsFileExtension;
 	}
 
-	public static void setBrowser() {
-		Configuration.browser = Properti.getBrowserName();
-	}
-
-	public static String getBrowser() {
-		return browser;
-	}
 
 	public static Capabilities getDriver() {
 		return driver;
