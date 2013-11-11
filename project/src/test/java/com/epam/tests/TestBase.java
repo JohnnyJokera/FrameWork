@@ -27,6 +27,7 @@ public class TestBase extends Configuration {
 		Reporter.log("[LOG]" + " " + "Run base url<br>");
 		baseUrl = "http://pn.com.ua/";
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
 	}
 	
 	public void goToMainPage() {

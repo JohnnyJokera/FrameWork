@@ -17,27 +17,27 @@ import org.testng.TestListenerAdapter;
 import com.epam.config.Configuration;
 import com.epam.factories.WebDriverFactory;
 public class ScreenShotOnFailure extends TestListenerAdapter {
-
-	 @Override
-	 public void onTestFailure(ITestResult tr) {
-		 DesiredCapabilities caps = new DesiredCapabilities();
-			caps.setBrowserName(System.getProperty("webdriver.browser", "firefox"));
-	  WebDriver driver = WebDriverFactory.getDriver(caps);
-	  File scrFile = ((TakesScreenshot) driver)
-	    .getScreenshotAs(OutputType.FILE);
-	  DateFormat dateFormat = new SimpleDateFormat("dd_MMM_yyyy__hh_mm_ssaa");
-	  String destDir = "target/surefire-reports/screenshots";
-	  new File(destDir).mkdirs();
-	  String destFile = dateFormat.format(new Date()) + ".png";
-
-	  try {
-	   FileUtils.copyFile(scrFile, new File(destDir + "/" + destFile));
-	  } catch (IOException e) {
-
-	   e.printStackTrace();
-	  }
-	  Reporter.setEscapeHtml(false);
-	  Reporter.log("Saved <a href=../screenshots/" + destFile
-	    + ">Screenshot</a>");
-	 }
+//
+//	 @Override
+//	 public void onTestFailure(ITestResult tr) {
+//		 DesiredCapabilities caps = new DesiredCapabilities();
+//			caps.setBrowserName(System.getProperty("webdriver.browser", "firefox"));
+//	  WebDriver driver = WebDriverFactory.getDriver(caps);
+//	  File scrFile = ((TakesScreenshot) driver)
+//	    .getScreenshotAs(OutputType.FILE);
+//	  DateFormat dateFormat = new SimpleDateFormat("dd_MMM_yyyy__hh_mm_ssaa");
+//	  String destDir = "target/surefire-reports/screenshots";
+//	  new File(destDir).mkdirs();
+//	  String destFile = dateFormat.format(new Date()) + ".png";
+//
+//	  try {
+//	   FileUtils.copyFile(scrFile, new File(destDir + "/" + destFile));
+//	  } catch (IOException e) {
+//
+//	   e.printStackTrace();
+//	  }
+//	  Reporter.setEscapeHtml(false);
+//	  Reporter.log("Saved <a href=../screenshots/" + destFile
+//	    + ">Screenshot</a>");
+//	 }
 	}

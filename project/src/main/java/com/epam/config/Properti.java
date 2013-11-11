@@ -21,14 +21,6 @@ public class Properti {
 
 	}
 
-	public static String getExelPass() {
-
-		return prop.getProperty("exelPass");
-	}
-
-	public static String getBrowserName() {
-		return prop.getProperty("browserName");
-	}
 
 	public static String getInputDataDir() {
 
