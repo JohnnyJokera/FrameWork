@@ -9,6 +9,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.TestListenerAdapter;
@@ -19,7 +20,9 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 
 	 @Override
 	 public void onTestFailure(ITestResult tr) {
-	  WebDriver driver = WebDriverFactory.getDriver(Configuration.getDriver());
+		 DesiredCapabilities caps = new DesiredCapabilities();
+			caps.setBrowserName(System.getProperty("webdriver.browser", "firefox"));
+	  WebDriver driver = WebDriverFactory.getDriver(caps);
 	  File scrFile = ((TakesScreenshot) driver)
 	    .getScreenshotAs(OutputType.FILE);
 	  DateFormat dateFormat = new SimpleDateFormat("dd_MMM_yyyy__hh_mm_ssaa");
