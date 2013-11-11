@@ -20,8 +20,7 @@ public class ExcelHelper {
 			Sheet sheet1 = getSheet(fileName,sheetName);
 			int columns = sheet1.getColumns();
 			int rows = sheet1.getRows();
-			System.out.println(columns+" "+rows);
-			
+		
 			list = new String[rows][columns];
 			for (int j = 0; j <columns ; j++) {
 				for (int i = 0; i < rows; i++) {

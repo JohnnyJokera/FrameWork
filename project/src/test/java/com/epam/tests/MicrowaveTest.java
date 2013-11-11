@@ -1,5 +1,6 @@
 package com.epam.tests;
 
+import org.testng.Reporter;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -21,8 +22,9 @@ public class MicrowaveTest extends TestBase{
 	public void microWave(String productName) {
 	
 		goToMainPage();
+		Reporter.log("[LOG]" + " " + "Choose first 2 goods<br>");
 		HomePage.selectItems(driver, productName);
-		
+		Reporter.log("[LOG]" + " " + "Checking the different fields<br>");
 		MicrowaveHelper.getMicrowave(selectPage);
 
 	}

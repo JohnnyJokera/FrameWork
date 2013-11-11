@@ -1,5 +1,6 @@
 package com.epam.tests;
 
+import org.testng.Reporter;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -21,8 +22,9 @@ public class ConditionerTest extends TestBase {
 	@Test(dataProviderClass = TestDataProvider.class, dataProvider = "baseDataProvider")
 	public void conditioner(String productName) {
 		goToMainPage();
+		Reporter.log("[LOG]" + " " + "Select the category 'Conditioner'<br>");
 		HomePage.selectConditioner(driver, productName);
-		System.out.println("2");	
+		Reporter.log("[LOG]" + " " + "Check result of searching in 3 different places<br>");
 		ConditionerHelper.checkCommonDescription(selectPage);
 		
 	}

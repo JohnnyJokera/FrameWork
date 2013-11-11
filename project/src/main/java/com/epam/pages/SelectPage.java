@@ -181,7 +181,6 @@ public class SelectPage{
 	}
 
 	public static SelectPage getSelectPage(WebDriver driver) {
-		System.out.println("Before");
 		SelectPage selectPage = PageFactory.initElements(driver, SelectPage.class);
 		return selectPage;
 				

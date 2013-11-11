@@ -12,6 +12,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.Reporter;
 
 import com.epam.pages.SelectPage;
 
@@ -29,9 +30,9 @@ public class RefregeratorHelper {
 		int lastPage = Integer.parseInt(lastPageV.getText());
 
 		while (t <=lastPage) {
-
+Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 			for (WebElement rows : rowsPrice) {
-
+				
 				String price = rows.findElement(By.tagName("strong")).getText();
 				price = price.substring(0, price.length() - 3).trim()
 						.replaceAll(" ", "");
@@ -47,6 +48,9 @@ public class RefregeratorHelper {
 		List<Integer> newListPrice = new ArrayList<>(listPrice);
 		Collections.copy(newListPrice, listPrice);
 		Collections.sort(newListPrice);
+		System.out.println("Site's filter ->> "+listPrice);
+		System.out.println("java's filer ->>> "+newListPrice);
+		Reporter.log("[LOG]" + " " + "Assert prices on page of refrigirators <br>");
 		Assert.assertTrue(listPrice.equals(newListPrice));
 
 	}
@@ -64,7 +68,7 @@ public class RefregeratorHelper {
 
 		int i = 1;
 		while (i <= lastPage) {
-
+			Reporter.log("[LOG]" + " " + "Get value from field 'names'<br>");
 			for (WebElement rows : rowsName) {
 
 				String price = rows.getText();
@@ -88,7 +92,7 @@ public class RefregeratorHelper {
 			}
 			j++;
 		}
-
+		Reporter.log("[LOG]" + " " + "Assert names on page of refrigirators <br>");
 		Assert.assertTrue(countTrue == listName.size());
 	}
 

@@ -20,6 +20,7 @@ public class TestBase extends Configuration {
 		Reporter.log("[LOG]" + " " + "Starting test "
 				+ this.getClass().getSimpleName() + "<br>");
 		driver = WebDriverFactory.getDriver(DesiredCapabilities.firefox());
+		Reporter.log("[LOG]" + " " + "Run base url<br>");
 		baseUrl = "http://pn.com.ua/";
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
@@ -30,9 +31,7 @@ public class TestBase extends Configuration {
 		driver.get(baseUrl + "/");
 	
 	}
-	public static WebDriver getDriver() {
-		return driver;
-	}
+
 	
 
 }
