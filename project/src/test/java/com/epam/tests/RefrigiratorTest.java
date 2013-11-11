@@ -21,14 +21,14 @@ public class RefrigiratorTest extends TestBase{
 		selectPage = SelectPage.getSelectPage(driver);
 	}
 
-	@Test(dataProviderClass = TestDataProvider.class, dataProvider = "baseDataProvider")
+/*	@Test(dataProviderClass = TestDataProvider.class, dataProvider = "baseDataProvider")
 	public void orderPrice(String name, String filter) throws IOException{
 			
 		goToMainPage();
 		HomePage.selectitems(driver,name, filter);
 		RefregeratorHelper.checkPriceFilter(selectPage);
 		
-	}
+	}*/
 	
 	@Test(dataProviderClass = TestDataProvider.class, dataProvider = "baseDataProvider")
 	public void orderName(String name, String filter) throws IOException{

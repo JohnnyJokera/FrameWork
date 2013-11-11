@@ -28,9 +28,9 @@ public class RefregeratorHelper {
 
 		int t = 1;
 		int lastPage = Integer.parseInt(lastPageV.getText());
-
-		while (t <=lastPage) {
 Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
+		while (t <=lastPage) {
+
 			for (WebElement rows : rowsPrice) {
 				
 				String price = rows.findElement(By.tagName("strong")).getText();
@@ -65,17 +65,17 @@ Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 		Set<String> newListName = new TreeSet<>();
 
 		int lastPage = Integer.parseInt(lastPageV.getText());
-
+		Reporter.log("[LOG]" + " " + "Get value from field 'names'<br>");
 		int i = 1;
 		while (i <= lastPage) {
-			Reporter.log("[LOG]" + " " + "Get value from field 'names'<br>");
+			
 			for (WebElement rows : rowsName) {
 
 				String price = rows.getText();
 				listName.add(price);
 				newListName.add(price);
 			}
-			if (i != lastPage) {
+			if (i < lastPage) {
 
 				next.click();
 			}
@@ -89,6 +89,7 @@ Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 
 			if (listName.get(j).equalsIgnoreCase(s.next())) {
 				countTrue++;
+				System.out.println(listName.get(j));
 			}
 			j++;
 		}
