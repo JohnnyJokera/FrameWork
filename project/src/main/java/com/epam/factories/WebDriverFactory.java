@@ -107,9 +107,9 @@ public class WebDriverFactory {
 		String browserType = capabilities.getBrowserName();
 		if (browserType.equals("firefox"))
 			return new FirefoxDriver(capabilities);
-		if (browserType.startsWith("ie"))
+		else if(browserType.startsWith("ie"))
 			return new InternetExplorerDriver(capabilities);
-		if (browserType.equals("chrome"))
+		else if(browserType.equals("chrome"))
 			return new ChromeDriver(capabilities);
 		/*if (browserType.equals("opera"))
 			return new OperaDriver(capabilities);*/
