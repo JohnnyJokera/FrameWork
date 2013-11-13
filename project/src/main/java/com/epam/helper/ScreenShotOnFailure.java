@@ -25,7 +25,7 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 	 private static final String NAME = "<a href=\"%s\"><img src=\"%<s\" width=200 height=150></a><br>";
 	@Override
 	public void onTestFailure(ITestResult tr) {
-	
+
 		WebDriver driver = WebDriverFactory.getDriver(Configuration.getDriver());
 		File scrFile = ((TakesScreenshot) driver)
 				.getScreenshotAs(OutputType.FILE);
