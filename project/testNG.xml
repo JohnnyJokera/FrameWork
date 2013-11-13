@@ -10,7 +10,7 @@
 			<class name="com.epam.tests.MicrowaveTest" />
 			<class name="com.epam.tests.WashingMachineTest" />
 			<class name="com.epam.tests.ConditionerTest" />
-			<class name="com.epam.tests.RefrigiratorTest" />
+			<class name="com.epam.tests.BreadMakerTest" />
 		</classes>
 	</test>
 </suite>
