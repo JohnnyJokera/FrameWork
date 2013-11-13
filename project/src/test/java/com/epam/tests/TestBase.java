@@ -1,16 +1,13 @@
 package com.epam.tests;
 
+import static com.epam.helper.TestBaseHelper.log;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.Reporter;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import com.epam.config.Configuration;
 import com.epam.factories.WebDriverFactory;
-import static com.epam.helper.TestBaseHelper.*;
 
 public class TestBase extends Configuration {
 
@@ -21,9 +18,10 @@ public class TestBase extends Configuration {
 		log("[LOG]" + " " + "Starting test "
 				+ this.getClass().getSimpleName() + "<br>");
 		
-		
-		
-		driver = WebDriverFactory.getDriver(DesiredCapabilities.firefox());
+		DesiredCapabilities cap = new DesiredCapabilities();
+		cap.setBrowserName(System.getProperty("webdriver.browser","firefox"));
+				
+		driver = WebDriverFactory.getDriver(cap);
 		log("[LOG]" + " " + "Run base url<br>");
 		baseUrl = "http://pn.com.ua/";
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

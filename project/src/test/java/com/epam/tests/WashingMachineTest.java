@@ -1,5 +1,7 @@
 package com.epam.tests;
 
+import static com.epam.helper.TestBaseHelper.*;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -21,7 +23,9 @@ public class WashingMachineTest extends TestBase {
 	public void washmachine(String productName, String min, String max) {
 
 		goToMainPage();
+		log("[LOG]" + " " + "Choose category, min & max price <br>");
 		HomePage.selectItemWash(driver, productName, min, max);
+		log("[LOG]" + " " + "Checking sorted product <br>");
 		WashingMachineHelper.verifyMinMaxFilters(selectPage, min, max);
 
 	}

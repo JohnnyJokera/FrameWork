@@ -26,7 +26,7 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 	@Override
 	public void onTestFailure(ITestResult tr) {
 	
-		WebDriver driver = WebDriverFactory.getDriver(Configuration.getdriver());
+		WebDriver driver = WebDriverFactory.getDriver(Configuration.getDriver());
 		File scrFile = ((TakesScreenshot) driver)
 				.getScreenshotAs(OutputType.FILE);
 		DateFormat dateFormat = new SimpleDateFormat("dd_MM_yyyy__hh_mm_ssaa");

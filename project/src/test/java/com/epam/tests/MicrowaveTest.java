@@ -1,14 +1,12 @@
 package com.epam.tests;
 
-import org.testng.Reporter;
+import static com.epam.helper.TestBaseHelper.log;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import com.epam.dataprovider.TestDataProvider;
 import com.epam.helper.MicrowaveHelper;
 import com.epam.pages.HomePage;
 import com.epam.pages.SelectPage;
-import static com.epam.helper.TestBaseHelper.*;
 
 public class MicrowaveTest extends TestBase{
 
