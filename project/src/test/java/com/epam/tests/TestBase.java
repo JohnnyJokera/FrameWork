@@ -19,7 +19,7 @@ public class TestBase extends Configuration {
 				+ this.getClass().getSimpleName() + "<br>");
 		
 		DesiredCapabilities cap = new DesiredCapabilities();
-		cap.setBrowserName(System.getProperty("webdriver.browser","chrome"));
+		cap.setBrowserName(System.getProperty("webdriver.browser","firefox"));
 				
 		driver = WebDriverFactory.getDriver(cap);
 		log("[LOG]" + " " + "Run base url<br>");

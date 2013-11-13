@@ -9,7 +9,7 @@ public class Configuration {
 	protected String baseUrl = "http://pn.com.ua/";
 
 	public static Capabilities getDriver(){
-		driver.setBrowserName(System.getProperty("webdriver.browser","chrome"));
+		driver.setBrowserName(System.getProperty("webdriver.browser","firefox"));
 		return driver;
 	}
 
