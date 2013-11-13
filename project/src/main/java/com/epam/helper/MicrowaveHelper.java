@@ -34,7 +34,7 @@ public class MicrowaveHelper extends TestBaseHelper{
 		}
 
 		System.out.println(wave.equals(wave2));
-		Assert.assertTrue(wave.equals(wave2));
+		Assert.assertFalse(wave.equals(wave2));
 		
 	}
 
