@@ -10,7 +10,7 @@ import org.testng.Assert;
 import com.epam.pages.MicroWave;
 import com.epam.pages.SelectPage;
 
-public class MicrowaveHelper {
+public class MicrowaveHelper extends TestBaseHelper{
 
 	private static List<MicroWave> wave = new ArrayList<>();
 	private static List<MicroWave> wave2 = new ArrayList<>();
@@ -34,7 +34,7 @@ public class MicrowaveHelper {
 		}
 
 		System.out.println(wave.equals(wave2));
-		Assert.assertFalse(wave.equals(wave2));
+		Assert.assertTrue(wave.equals(wave2));
 		
 	}
 

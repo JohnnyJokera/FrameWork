@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeTest;
 
 import com.epam.config.Configuration;
 import com.epam.factories.WebDriverFactory;
+import static com.epam.helper.TestBaseHelper.*;
 
 public class TestBase extends Configuration {
 
@@ -17,21 +18,21 @@ public class TestBase extends Configuration {
 	
 	@BeforeTest
 	public void setUp() {
-		Reporter.log("[LOG]" + " " + "Starting test "
+		log("[LOG]" + " " + "Starting test "
 				+ this.getClass().getSimpleName() + "<br>");
 		
 		
 		
 		driver = WebDriverFactory.getDriver(DesiredCapabilities.firefox());
-		Reporter.log("[LOG]" + " " + "Run base url<br>");
+		log("[LOG]" + " " + "Run base url<br>");
 		baseUrl = "http://pn.com.ua/";
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 	}
 	
 	public void goToMainPage() {
-
-		Reporter.log("[LOG]" + " " + "Opening main page <br>");
+		System.setProperty("org.uncommons.reportng.escape-output", "false");
+		log("[LOG]" + " " + "Opening main page <br>");
 		driver.get(baseUrl + "/");
 	
 	}

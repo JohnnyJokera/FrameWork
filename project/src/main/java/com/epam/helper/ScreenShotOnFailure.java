@@ -1,6 +1,7 @@
 package com.epam.helper;
 
 import java.io.File;
+import static com.epam.helper.TestBaseHelper.*;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -14,9 +15,11 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.TestListenerAdapter;
+import org.testng.annotations.BeforeMethod;
 
 import com.epam.config.Configuration;
 import com.epam.factories.WebDriverFactory;
+import com.epam.pages.SelectPage;
 
 public class ScreenShotOnFailure extends TestListenerAdapter {
 
@@ -26,8 +29,8 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 		WebDriver driver = WebDriverFactory.getDriver(Configuration.getdriver());
 		File scrFile = ((TakesScreenshot) driver)
 				.getScreenshotAs(OutputType.FILE);
-		DateFormat dateFormat = new SimpleDateFormat("dd_MMM_yyyy__hh_mm_ssaa");
-		String destDir = "target/surefire-reports/screenshots";
+		DateFormat dateFormat = new SimpleDateFormat("dd_MM_yyyy__hh_mm_ssaa");
+		String destDir = "target/surefire-reports/html/screenshots";
 		new File(destDir).mkdirs();
 		String destFile = dateFormat.format(new Date()) + ".png";
 		try {
@@ -37,7 +40,7 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 			e.printStackTrace();
 		}
 		Reporter.setEscapeHtml(false);
-		Reporter.log("Saved <a href=../screenshots/" + destFile
+		log("Saved <a href=screenshots/" + destFile
 				+ ">Screenshot</a>");
 	}
 }

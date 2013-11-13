@@ -8,6 +8,7 @@ import com.epam.dataprovider.TestDataProvider;
 import com.epam.helper.MicrowaveHelper;
 import com.epam.pages.HomePage;
 import com.epam.pages.SelectPage;
+import static com.epam.helper.TestBaseHelper.*;
 
 public class MicrowaveTest extends TestBase{
 
@@ -22,9 +23,9 @@ public class MicrowaveTest extends TestBase{
 	public void microWave(String productName) {
 	
 		goToMainPage();
-		Reporter.log("[LOG]" + " " + "Choose first 2 goods<br>");
+		log("[LOG]" + " " + "Choose first 2 goods<br>");
 		HomePage.selectItems(driver, productName);
-		Reporter.log("[LOG]" + " " + "Checking the different fields<br>");
+		log("[LOG]" + " " + "Checking the different fields<br>");
 		MicrowaveHelper.getMicrowave(selectPage);
 
 	}
