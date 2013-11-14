@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import java.util.SortedSet;
 import java.util.TreeSet;
 
 import org.bouncycastle.crypto.tls.AlertDescription;
@@ -62,7 +61,7 @@ Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 		WebElement next = selectPage.getNext();
 
 		List<WebElement> rowsName = selectPage.getRowsName();
-		SortedSet<String> listName = new TreeSet<>();
+		List<String> listName = new ArrayList<>();
 		Set<String> newListName = new TreeSet<>();
 
 		int lastPage = Integer.parseInt(lastPageV.getText());
@@ -72,10 +71,9 @@ Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 			
 			for (WebElement rows : rowsName) {
 
-				String name = rows.getText();
-				listName.add(name);
-				newListName.add(name);
-				listName.add(name);
+				String price = rows.getText();
+				listName.add(price);
+				newListName.add(price);
 			}
 			if (i < lastPage) {
 
@@ -84,21 +82,21 @@ Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 			i++;
 		}
 
-		/*Iterator<String> s = newListName.iterator();
+		Iterator<String> s = newListName.iterator();
 		int j = 0;
 		long countTrue = 0;
 		while (s.hasNext()) {
 
 			if (listName.get(j).equalsIgnoreCase(s.next())) {
 				countTrue++;
+			
 			}
 			j++;
 		}
-		System.out.println(countTrue);*/
-	
-		System.out.println("size -> "+listName.size());
+		System.out.println(countTrue);
+		System.out.println(listName.size());
 		Reporter.log("[LOG]" + " " + "Assert names on page of refrigirators <br>");
-		Assert.assertTrue(listName.equals(newListName));
+		Assert.assertTrue(countTrue == listName.size());
 		
 	}
 

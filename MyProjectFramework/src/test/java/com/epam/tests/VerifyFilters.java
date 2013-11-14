@@ -20,7 +20,7 @@ public class VerifyFilters extends TestBase{
 		selectPage = SelectPage.getSelectPage(driver);
 	}
 
-/*	@Test(dataProviderClass = TestDataProvider.class, dataProvider = "baseDataProvider")
+@Test(dataProviderClass = TestDataProvider.class, dataProvider = "baseDataProvider")
 	public void orderPrice(String name, String filter) throws IOException{
 			
 		goToMainPage();
@@ -29,7 +29,7 @@ public class VerifyFilters extends TestBase{
 		log("[LOG]" + " " + "Checking sorted product <br>");
 		VerifyFiltersHelper.checkPriceFilter(selectPage);
 		
-	}*/
+	}
 	
 	@Test(dataProviderClass = TestDataProvider.class, dataProvider = "baseDataProvider")
 	public void orderName(String name, String filter) throws IOException{
