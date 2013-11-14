@@ -86,8 +86,8 @@
             <version>2.16</version>
             <configuration>
             <suiteXmlFiles>
-           <suiteXmlFile>${TARGET_TESTS}.xml</suiteXmlFile>
-           <!-- <suiteXmlFile>testNG.xml</suiteXmlFile> -->
+        <suiteXmlFile>${TARGET_TESTS}.xml</suiteXmlFile>
+         <!-- <suiteXmlFile>testNG.xml</suiteXmlFile>  -->
             </suiteXmlFiles>
                 <properties>
                     <property>
