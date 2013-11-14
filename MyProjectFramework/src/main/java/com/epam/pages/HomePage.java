@@ -88,9 +88,9 @@ public class HomePage {
 	// -------------------------------------Microwave-------------------------------------------------------
 	public static void selectItems(WebDriver driver, String name) {
 		driver.findElement(By.linkText(name)).click();
-		driver.findElement(By.xpath("nameOfFirstItem")).click();
-		driver.findElement(By.xpath("nameOfSecondItem")).click();
-		driver.findElement(By.xpath("linkCompare")).click();
+		driver.findElement(By.xpath("//div[@id='page-content-wrap']/div[3]/div/div[2]/div/div[3]/div[3]/div[4]/span")).click();
+		driver.findElement(By.xpath("//div[@id='page-content-wrap']/div[3]/div/div[2]/div/div[3]/div[4]/div[4]/span")).click();
+		driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div[3]/div/div[2]/div/div[3]/div[3]/div[4]/span[3]/a")).click();
 	}
 
 	public static WebElement getLinkWave() {
@@ -113,9 +113,9 @@ public class HomePage {
 	public static void selectItemWash(WebDriver driver, String name,
 			String minPrice, String maxPrice) {
 		driver.findElement(By.linkText(name)).click();
-		driver.findElement(By.xpath("minFil"))
+		driver.findElement(By.xpath("html/body/div[2]/div[3]/div/div[3]/div[1]/div[1]/div/div[2]/div[3]/div[2]"))
 				.findElement(By.linkText(minPrice)).click();
-		driver.findElement(By.xpath("maxFil"))
+		driver.findElement(By.xpath("html/body/div[2]/div[3]/div/div[3]/div[1]/div[1]/div/div[2]/div[4]/div[2]"))
 				.findElement(By.linkText(maxPrice)).click();
 
 	}
