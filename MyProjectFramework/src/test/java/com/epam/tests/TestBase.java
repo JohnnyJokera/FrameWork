@@ -26,6 +26,7 @@ public class TestBase extends Configuration {
 		baseUrl = "http://pn.com.ua/";
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
+		
 	}
 	
 	public void goToMainPage() {

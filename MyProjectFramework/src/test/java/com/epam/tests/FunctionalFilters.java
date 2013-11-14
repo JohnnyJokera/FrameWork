@@ -21,7 +21,8 @@ public class FunctionalFilters extends TestBase {
 	public void breadmaker(String productName, String filterName) {
 		goToMainPage();
 		log("[LOG]" + " " + "Select page 'Bread Maker' and filter 'weight adjustment'<br>");
-		HomePage.selectItemBreadMaker(driver, productName, filterName);
+		HomePage.goToProductPage(driver, productName);
+		HomePage.selectItemBreadMaker(driver, filterName);
 		log("[LOG]" + " " + "Result of products with filter 'weight adjustment'<br>");
 		FunctionalFiltersHelper.checkDescriptionFilter(selectPage, filterName);
 	}
