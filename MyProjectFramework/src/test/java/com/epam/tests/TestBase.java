@@ -32,7 +32,7 @@ public class TestBase extends Configuration {
 	}
 	
 	public void goToMainPage() {
-		System.setProperty("org.uncommons.reportng.escape-output", "false");
+		System.setProperty("org.uncommons.reportng.escape-output", Properti.getValue());
 		log("[LOG]" + " " + "Opening main page <br>");
 		driver.get(Properti.getBaseURL() + "/");
 	

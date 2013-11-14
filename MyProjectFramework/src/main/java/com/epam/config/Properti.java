@@ -43,6 +43,11 @@ public class Properti {
 
 	}
 	
+	public static String getValue() {
+
+		return prop.getProperty("defValue");
+
+	}
 	
 
 }
