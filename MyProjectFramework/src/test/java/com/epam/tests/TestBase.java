@@ -10,6 +10,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeTest;
 
 import com.epam.config.Configuration;
+import com.epam.config.Properti;
 import com.epam.constant.Constant;
 import com.epam.factories.WebDriverFactory;
 
@@ -23,11 +24,10 @@ public class TestBase extends Configuration {
 				+ this.getClass().getSimpleName() + "<br>");
 		
 		DesiredCapabilities cap = new DesiredCapabilities();
-		cap.setBrowserName(System.getProperty("webdriver.browser",BrowserType.CHROME));
+		cap.setBrowserName(System.getProperty("webdriver.browser",Properti.getBrowser()));
 				
 		driver = WebDriverFactory.getDriver(cap);
 		log("[LOG]" + " " + "Run base url<br>");
-		baseUrl = "http://pn.com.ua/";
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		
@@ -36,7 +36,7 @@ public class TestBase extends Configuration {
 	public void goToMainPage() {
 		System.setProperty("org.uncommons.reportng.escape-output", Constant.fail);
 		log("[LOG]" + " " + "Opening main page <br>");
-		driver.get(baseUrl + "/");
+		driver.get(Properti.getBaseURL() + "/");
 	
 	}
 

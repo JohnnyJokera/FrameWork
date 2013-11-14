@@ -31,6 +31,18 @@ public class Properti {
 
 	}
 	
+	public static String getBrowser() {
+
+		return prop.getProperty("browserName");
+
+	}
+	
+	public static String getBaseURL() {
+
+		return prop.getProperty("url");
+
+	}
+	
 	
 
 }
