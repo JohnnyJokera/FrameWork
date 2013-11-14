@@ -23,7 +23,6 @@ import com.epam.pages.SelectPage;
 
 public class ScreenShotOnFailure extends TestListenerAdapter {
 	 private static final String NAME = "<a href=\"%s\"><img src=\"%<s\" width=200 height=150></a><br>";
-	 private static WebDriver driver;
 	@Override
 	public void onTestFailure(ITestResult tr) {
 	
@@ -42,11 +41,5 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 		}
 		Reporter.setEscapeHtml(false);
 		log(String.format(NAME, "screenshots/" + destFile));
-	}
-	public static WebDriver getDriver() {
-		return driver;
-	}
-	public static void setDriver(WebDriver driver) {
-		ScreenShotOnFailure.driver = driver;
 	}
 }
