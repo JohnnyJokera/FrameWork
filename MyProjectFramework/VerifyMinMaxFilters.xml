@@ -7,7 +7,7 @@
 	<test name="testNG test1">
 		<classes>
 
-			<class name="com.epam.tests.WashingMachineTest" />
+			<class name="com.epam.tests.VerifyMinMaxFilters" />
 
 		</classes>
 	</test>

@@ -6,7 +6,7 @@
 	</listeners>
 	<test name="testNG test1">
 		<classes>
-			<class name="com.epam.tests.BreadMakerTest" />
+			<class name="com.epam.tests.FunctionalFilters" />
 		</classes>
 	</test>
 </suite>
