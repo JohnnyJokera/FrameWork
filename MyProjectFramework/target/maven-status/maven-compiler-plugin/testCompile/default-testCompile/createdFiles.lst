@@ -1,0 +1,6 @@
+com\epam\tests\VerifyMinMaxFilters.class
+com\epam\tests\FunctionalFilters.class
+com\epam\tests\CompareFilter.class
+com\epam\tests\TestBase.class
+com\epam\tests\VerifyLocation.class
+com\epam\tests\VerifyFilters.class
