@@ -45,9 +45,7 @@ public class VerifyMinMaxFiltersHelper {
 		int max = Integer.parseInt(maxTarget);
 		Assert.assertTrue(listPrice.get(0) >= min);
 		Assert.assertTrue(listPrice.get(listPrice.size()-1) <= max);
-		if (listPrice.get(0) >= min && listPrice.get(listPrice.size()-1) <= max) {
-			System.out.println("true");
-		}
+	
 
 	}
 

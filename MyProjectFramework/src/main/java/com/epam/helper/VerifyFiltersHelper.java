@@ -49,8 +49,6 @@ Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 		List<Integer> newListPrice = new ArrayList<>(listPrice);
 		Collections.copy(newListPrice, listPrice);
 		Collections.sort(newListPrice);
-		System.out.println("Site's filter ->> "+listPrice);
-		System.out.println("java's filer ->>> "+newListPrice);
 		Reporter.log("[LOG]" + " " + "Assert prices on page of refrigirators <br>");
 		Assert.assertTrue(listPrice.equals(newListPrice));
 
@@ -74,7 +72,7 @@ Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 			for (WebElement rows : rowsName) {
 
 				String name = rows.getText();
-				listName.add(name);
+				listName.add(name.toLowerCase());
 			
 			}
 			if (i < lastPage) {
@@ -103,10 +101,7 @@ Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 		System.out.println(countTrue);*/
 		newListName.addAll(listName);
 		Collections.sort(newListName);
-		System.out.println("old "+listName.size() + " new " + newListName.size());
 		Reporter.log("[LOG]" + " " + "Assert names on page of refrigirators <br>");
-		System.out.println(listName);
-		System.out.println(newListName);
 		Assert.assertTrue(listName.equals(newListName));
 		
 	}
