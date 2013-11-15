@@ -83,11 +83,11 @@ Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 			}
 			i++;
 		}
-		for(int k = 1,j=0; k<listName.size()-1;k++,j++){
+	/*	for(int k = 1,j=0; k<listName.size()-1;k++,j++){
 			
 			if(listName.get(j).compareTo(listName.get(k))<0){
 			count++;}
-			}
+			}*/
 			
 	/*	Iterator<String> s = newListName.iterator();
 		int j = 0;
@@ -101,13 +101,13 @@ Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 			j++;
 		}
 		System.out.println(countTrue);*/
-	/*	newListName.addAll(listName);
-		Collections.sort(newListName);*/
+		newListName.addAll(listName);
+		Collections.sort(newListName);
 		System.out.println("old "+listName.size() + " new " + newListName.size());
 		Reporter.log("[LOG]" + " " + "Assert names on page of refrigirators <br>");
-	/*	System.out.println(listName);
-		System.out.println(newListName);*/
-		Assert.assertTrue(count==listName.size());
+		System.out.println(listName);
+		System.out.println(newListName);
+		Assert.assertTrue(listName.equals(newListName));
 		
 	}
 
