@@ -16,6 +16,8 @@ public class CompareFilterHelper extends TestBaseHelper{
 	private static List<MicroWave> wave2 = new ArrayList<>();
 
 	public static void getMicrowave(SelectPage selectPage) {
+		
+		log("[LOG]" + " " + "Choose first 2 goods for test<br>");
 
 		List<WebElement> microwavesRows = selectPage.getpropertiesRows();
 
@@ -26,13 +28,12 @@ public class CompareFilterHelper extends TestBaseHelper{
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		for (WebElement row : microwavesRows) {
 			wave2.add(converFirstRow(row));
 		}
-
+		log("[LOG]" + " " + "Checking the different fields are realy different <br>");
 		System.out.println(wave.equals(wave2));
 		Assert.assertFalse(wave.equals(wave2));
 		

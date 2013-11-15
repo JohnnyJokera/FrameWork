@@ -24,9 +24,7 @@ public class VerifyFilters extends TestBase{
 	public void orderPrice(String name, String filter) throws IOException{
 			
 		goToMainPage();
-		log("[LOG]" + " " + "Choose category and filter 'price' <br>");
 		HomePage.selectitems(driver,name, filter);
-		log("[LOG]" + " " + "Checking sorted product <br>");
 		VerifyFiltersHelper.checkPriceFilter(selectPage);
 		
 	}
@@ -35,9 +33,7 @@ public class VerifyFilters extends TestBase{
 	public void orderName(String name, String filter) throws IOException{
 			
 		goToMainPage();
-		log("[LOG]" + " " + "Choose category and filter 'name' <br>");
 		HomePage.selectitems(driver,name, filter);
-		log("[LOG]" + " " + "Checking sorted product <br>");
 		VerifyFiltersHelper.checkNameFilter(selectPage);
 		
 	}

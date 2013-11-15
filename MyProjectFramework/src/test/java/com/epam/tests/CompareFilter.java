@@ -1,9 +1,8 @@
 package com.epam.tests;
 
-import static com.epam.helper.TestBaseHelper.log;
-
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import com.epam.dataprovider.TestDataProvider;
 import com.epam.helper.CompareFilterHelper;
 import com.epam.pages.HomePage;
@@ -22,9 +21,7 @@ public class CompareFilter extends TestBase{
 	public void microWave(String productName) {
 	
 		goToMainPage();
-		log("[LOG]" + " " + "Choose first 2 goods<br>");
 		HomePage.selectItems(driver, productName);
-		log("[LOG]" + " " + "Checking the different fields<br>");
 		CompareFilterHelper.getMicrowave(selectPage);
 
 	}

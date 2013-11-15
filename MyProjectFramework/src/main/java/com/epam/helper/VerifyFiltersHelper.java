@@ -1,5 +1,7 @@
 package com.epam.helper;
 
+import static com.epam.helper.TestBaseHelper.log;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -20,7 +22,7 @@ import com.epam.pages.SelectPage;
 public class VerifyFiltersHelper {
 
 	public static void checkPriceFilter(SelectPage selectPage) {
-
+		log("[LOG]" + " " + "Checking filter 'price' <br>");
 		WebElement lastPageV = selectPage.getlastPage();
 		WebElement next = selectPage.getNext();
 
@@ -45,9 +47,10 @@ Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 			}
 			t++;
 		}
-
+		log("[LOG]" + " " + "Creating new list of product <br>");
 		List<Integer> newListPrice = new ArrayList<>(listPrice);
 		Collections.copy(newListPrice, listPrice);
+		log("[LOG]" + " " + "Sort by using Java <br>");
 		Collections.sort(newListPrice);
 		Reporter.log("[LOG]" + " " + "Assert prices on page of refrigirators <br>");
 		Assert.assertTrue(listPrice.equals(newListPrice));
@@ -55,7 +58,7 @@ Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 	}
 
 	public static void checkNameFilter(SelectPage selectPage) {
-
+		log("[LOG]" + " " + "Checking filter 'name' <br>");
 		WebElement lastPageV = selectPage.getlastPage();
 		WebElement next = selectPage.getNext();
 
@@ -81,25 +84,9 @@ Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 			}
 			i++;
 		}
-	/*	for(int k = 1,j=0; k<listName.size()-1;k++,j++){
-			
-			if(listName.get(j).compareTo(listName.get(k))<0){
-			count++;}
-			}*/
-			
-	/*	Iterator<String> s = newListName.iterator();
-		int j = 0;
-		long countTrue = 0;
-		while (s.hasNext()) {
-
-			if (listName.get(j).equalsIgnoreCase(s.next())) {
-				countTrue++;
-			
-			}
-			j++;
-		}
-		System.out.println(countTrue);*/
+		log("[LOG]" + " " + "Creating new list of product <br>");
 		newListName.addAll(listName);
+		log("[LOG]" + " " + "Sort by using Java <br>");
 		Collections.sort(newListName);
 		Reporter.log("[LOG]" + " " + "Assert names on page of refrigirators <br>");
 		Assert.assertTrue(listName.equals(newListName));

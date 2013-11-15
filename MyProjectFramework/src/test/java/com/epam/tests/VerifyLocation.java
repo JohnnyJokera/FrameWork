@@ -20,9 +20,7 @@ public class VerifyLocation extends TestBase {
 	@Test(dataProviderClass = TestDataProvider.class, dataProvider = "baseDataProvider")
 	public void conditioner(String productName) {
 		goToMainPage();
-		log("[LOG]" + " " + "Select the category 'Conditioner'<br>");
 		HomePage.selectConditioner(driver, productName);
-		log("[LOG]" + " " + "Check result of searching in 3 different places<br>");
 		VerifyLocationHelper.checkCommonDescription(selectPage);
 		
 	}

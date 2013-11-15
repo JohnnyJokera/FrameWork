@@ -1,5 +1,7 @@
 package com.epam.helper;
 
+import static com.epam.helper.TestBaseHelper.log;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -20,7 +22,7 @@ public class FunctionalFiltersHelper {
 
 	public static void checkDescriptionFilter(SelectPage selectPage, String str) {
 		listDescription = new ArrayList<>();
-
+		log("[LOG]" + " " + "Checking filter 'weight adjustment'<br>");
 		WebElement lastPageV = selectPage.getlastPage();
 		WebElement next = selectPage.getNext();
 		List<WebElement> description = selectPage.getDescript();
@@ -43,6 +45,7 @@ public class FunctionalFiltersHelper {
 			t++;
 
 		}
+		log("[LOG]" + " " + "Result of checking products with filter 'weight adjustment'<br>");
 		for (int i = 0; i < listDescription.size(); i++) {
 			Assert.assertTrue(listDescription.get(i).contains(str));
 		}
@@ -92,6 +95,7 @@ public class FunctionalFiltersHelper {
 			t++;
 
 		}
+		log("[LOG]" + " " + "Result of checking products's producers<br>");
 		Assert.assertTrue(listProdusers.containsAll(setOfProducers));
 	}
 

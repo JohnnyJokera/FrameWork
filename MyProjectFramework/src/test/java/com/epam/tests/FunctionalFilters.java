@@ -20,10 +20,8 @@ public class FunctionalFilters extends TestBase {
 	@Test(dataProviderClass = TestDataProvider.class, dataProvider = "baseDataProvider")
 	public void breadmaker(String productName, String filterName) {
 		goToMainPage();
-		log("[LOG]" + " " + "Select page 'Bread Maker' and filter 'weight adjustment'<br>");
 		HomePage.goToProductPage(driver, productName);
 		HomePage.selectItemBreadMaker(driver, filterName);
-		log("[LOG]" + " " + "Result of products with filter 'weight adjustment'<br>");
 		FunctionalFiltersHelper.checkDescriptionFilter(selectPage, filterName);
 	}
 	
@@ -31,9 +29,7 @@ public class FunctionalFilters extends TestBase {
 	public void breadmaker2(String productName) {
 		
 		goToMainPage();
-		log("[LOG]" + " " + "Select page 'Bread Maker'<br>");
 		HomePage.selectItemBreadMaker2(driver, productName);
-		log("[LOG]" + " " + "Result of products's producers<br>");
 		FunctionalFiltersHelper.countProducers(selectPage);
 
 	}

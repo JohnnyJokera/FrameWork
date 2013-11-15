@@ -21,9 +21,7 @@ public class VerifyMinMaxFilters extends TestBase {
 	public void washmachine(String productName, String min, String max) {
 
 		goToMainPage();
-		log("[LOG]" + " " + "Choose category, min & max price <br>");
 		HomePage.selectItemWash(driver, productName, min, max);
-		log("[LOG]" + " " + "Checking sorted product <br>");
 		VerifyMinMaxFiltersHelper.verifyMinMaxFilters(selectPage, min, max);
 
 	}

@@ -1,5 +1,7 @@
 package com.epam.helper;
 
+import static com.epam.helper.TestBaseHelper.log;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -17,7 +19,7 @@ public class VerifyMinMaxFiltersHelper {
 
 	public static void verifyMinMaxFilters(SelectPage selectPage,
 			String minTarget, String maxTarget) {
-
+		log("[LOG]" + " " + "Checking min & max prices <br>");
 		WebElement lastPageV = selectPage.getlastPage();
 		WebElement next = selectPage.getNext();
 		List<WebElement> minimum = selectPage.getminFilter();
@@ -39,7 +41,7 @@ public class VerifyMinMaxFiltersHelper {
 			i++;
 		}
 
-
+		log("[LOG]" + " " + "Checking sorted product <br>");
 		Collections.sort(listPrice);
 		int min = Integer.parseInt(minTarget);
 		int max = Integer.parseInt(maxTarget);

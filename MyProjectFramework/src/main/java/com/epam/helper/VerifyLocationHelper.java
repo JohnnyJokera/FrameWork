@@ -1,5 +1,7 @@
 package com.epam.helper;
 
+import static com.epam.helper.TestBaseHelper.log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +22,8 @@ public class VerifyLocationHelper {
 	public static List<String> list;
 
 	public static void checkCommonDescription(SelectPage selectPage) {
+		
+		log("[LOG]" + " " + "Checking result of searching in 3 different places<br>");
 
 		List<WebElement> descript = selectPage.getDescriptionConditioner();
 
@@ -75,7 +79,7 @@ public class VerifyLocationHelper {
 	}
 
 	private static void checkFullDescription(SelectPage selectPage, String name) {
-
+		log("[LOG]" + " " + "Checking full description <br>");
 		listForDescription = new ArrayList<>();
 
 		List<WebElement> descriptionTable = selectPage.getDescriptionTable();
@@ -91,7 +95,7 @@ public class VerifyLocationHelper {
 	}
 
 	private static void checkPricePage(SelectPage selectPage, String name) {
-
+		log("[LOG]" + " " + "Checking description on price page<br>");
 		List<WebElement> price = selectPage.getcommonPriceBlock();
 		selectPage.getinputField().sendKeys(name);
 		selectPage.getbuttonSearch().click();
