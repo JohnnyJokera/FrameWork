@@ -2,6 +2,7 @@ package com.epam.helper;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -62,18 +63,19 @@ Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 
 		List<WebElement> rowsName = selectPage.getRowsName();
 		List<String> listName = new ArrayList<>();
-		Set<String> newListName = new TreeSet<>();
+		List<String> newListName = new ArrayList<>();
 
 		int lastPage = Integer.parseInt(lastPageV.getText());
 		Reporter.log("[LOG]" + " " + "Get value from field 'names'<br>");
 		int i = 1;
+		int count = 0;
 		while (i <= lastPage) {
 			
 			for (WebElement rows : rowsName) {
 
-				String price = rows.getText();
-				listName.add(price);
-				newListName.add(price);
+				String name = rows.getText();
+				listName.add(name);
+			
 			}
 			if (i < lastPage) {
 
@@ -81,8 +83,13 @@ Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 			}
 			i++;
 		}
-
-		Iterator<String> s = newListName.iterator();
+		for(int k = 1,j=0; k<listName.size()-1;k++,j++){
+			
+			if(listName.get(j).compareTo(listName.get(k))<0){
+			count++;}
+			}
+			
+	/*	Iterator<String> s = newListName.iterator();
 		int j = 0;
 		long countTrue = 0;
 		while (s.hasNext()) {
@@ -93,10 +100,14 @@ Reporter.log("[LOG]" + " " + "Get value from field 'prices'<br>");
 			}
 			j++;
 		}
-		System.out.println(countTrue);
-		System.out.println(listName.size());
+		System.out.println(countTrue);*/
+	/*	newListName.addAll(listName);
+		Collections.sort(newListName);*/
+		System.out.println("old "+listName.size() + " new " + newListName.size());
 		Reporter.log("[LOG]" + " " + "Assert names on page of refrigirators <br>");
-		Assert.assertTrue(countTrue == listName.size());
+	/*	System.out.println(listName);
+		System.out.println(newListName);*/
+		Assert.assertTrue(count==listName.size());
 		
 	}
 
