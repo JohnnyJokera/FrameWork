@@ -17,8 +17,8 @@ public class VerifyMinMaxFiltersHelper {
 
 	private static List<Integer> listPrice;
 
-	public static void verifyMinMaxFilters(SelectPage selectPage,
-			String minTarget, String maxTarget) {
+	public static void verifyMinMaxFilters(SelectPage selectPage,String minTarget, String maxTarget) {
+		
 		log("[LOG]" + " " + "Checking min & max prices <br>");
 		WebElement lastPageV = selectPage.getlastPage();
 		WebElement next = selectPage.getNext();

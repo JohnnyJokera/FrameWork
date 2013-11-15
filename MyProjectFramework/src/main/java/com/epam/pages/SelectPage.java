@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SelectPage{
 	//----------------------Filters-----------------------
-	private static final String lastPageLink = "pager-last";
+	private static final String lastPageLink = "ul>li:last-child a";
 	private static final String fieldsOfPrices = ".item .price";
 	private static final String nextPageLink = "//html/body/div[2]/div[3]/div/div[3]/div/div[2]/div/div[3]/div[2]/div/div/ul/li[2]/a";
 	private static final String fieldsOfNames = "name";
@@ -143,7 +143,7 @@ public class SelectPage{
 	}
 //---------------------------Common fields--------------------
 
-	@FindBy(className = lastPageLink)
+	@FindBy(css = lastPageLink)
 	private WebElement lastPage;
 
 	@FindBy(css = fieldsOfPrices)
